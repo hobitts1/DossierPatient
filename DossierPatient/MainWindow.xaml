@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="cboPatient" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Nom"  HorizontalAlignment="Left" Margin="31,44,0,0" VerticalAlignment="Top" Width="120" Height="38" SelectionChanged="cboPatient_SelectionChanged"/>
+        <ListBox x:Name="lsDossierMedicals" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Diagnostique" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="213,14,19,187"/>
+        <Button x:Name="btnAjouterDiagnostique" Content="AjoutDiagnostique" HorizontalAlignment="Left" Margin="24,106,0,0" VerticalAlignment="Top" Height="32" Width="135" Click="btnAjouterPatient_Click"/>
+        <Button x:Name="btnSupprimer" Content="SupprimerDiagnostique" HorizontalAlignment="Left" Margin="27,153,0,0" VerticalAlignment="Top" Height="34" Width="130" Click="btnSupprimer_Click"/>
+        <Button x:Name="btnDiagnostiqueActive" Content="MisAJourDiagnostique" HorizontalAlignment="Left" Margin="26,0,0,0" VerticalAlignment="Center" Height="33" Width="130" Click="btnDiagnostiqueActive_Click"/>
+        <CheckBox x:Name="checkBox" Content="DiagnostiqueActive" HorizontalAlignment="Left" Margin="220,264,0,0" VerticalAlignment="Top" Height="26" Width="133" Checked="CheckBox_Checked"/>
+
     </Grid>
 </Window>
